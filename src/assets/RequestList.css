@@ -1,0 +1,123 @@
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.APPROVED {
+  background: green;
+}
+
+.REJECTED {
+  background: red;
+}
+
+.SUBMITTED {
+  background: orange;
+}
+
+.CLOSED {
+  background: blue;
+}
+
+.NEEDS_CLARIFICATION {
+  background: purple;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th {
+  background: #1976d2;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  text-align: center;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.APPROVED {
+  background: green;
+}
+
+.REJECTED {
+  background: red;
+}
+
+.SUBMITTED {
+  background: orange;
+}
+
+.CLOSED {
+  background: blue;
+}
+
+.REOPENED {
+  background: #009688;
+}
+
+.NEEDS_CLARIFICATION {
+  background: purple;
+}
+
+button {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.approve-btn {
+  background: green;
+}
+
+.reject-btn {
+  background: red;
+}
+
+.clarify-btn {
+  background: purple;
+}
+
+.close-btn {
+  background: blue;
+}
+
+.reopen-btn {
+  background: #009688;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.request-container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.request-container h1 {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+}
