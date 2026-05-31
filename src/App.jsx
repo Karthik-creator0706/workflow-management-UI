@@ -1,9 +1,9 @@
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import CreateRequest from "./pages/CreateRequest";
-import RequestList from "./pages/RequestList";
-import WorkflowLogs from "./pages/Workflow";
-import Sidebar from "./pages/Sidebar";
+import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
+import CreateRequest from "./Pages/CreateRequest";
+import RequestList from "./Pages/RequestList";
+import WorkflowLogs from "./Pages/Workflow";
+import Sidebar from "./Pages/Sidebar";
 
 import "../src/App.css"
 
