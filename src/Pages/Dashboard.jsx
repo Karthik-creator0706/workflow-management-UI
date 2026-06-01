@@ -10,17 +10,17 @@ function Dashboard() {
 
   useEffect(() => {
 
-    axios.get("http://localhost:8080/requests")
-      .then((res) => {
-        setRequests(res.data);
-        setLoading(false);
-      })
-      .catch(() => {
-        setError("Failed to load dashboard");
-        setLoading(false);
-      });
+  axios.get("https://workflow-management-system-o317.onrender.com/requests")
+    .then((res) => {
+      setRequests(res.data);
+      setLoading(false);
+    })
+    .catch(() => {
+      setError("Failed to load dashboard");
+      setLoading(false);
+    });
 
-  }, []);
+}, []);
 
   const total = requests.length;
 

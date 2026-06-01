@@ -5,9 +5,10 @@ import "../assets/Workflow.css"
 function WorkflowLogs() {
 
   const [logs, setLogs] = useState([]);
+  const API_URL = "https://workflow-management-system-o317.onrender.com";
 
   useEffect(() => {
-    axios.get("http://localhost:8080/logs")
+    axios.get(`${API_URL}/logs`)
       .then((res) => {
         setLogs(res.data);
       });

@@ -7,16 +7,17 @@ function Login() {
 
   const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+const API_URL = "https://workflow-management-system-o317.onrender.com";
 
   const handleLogin = () => {
 
-  axios.post(
-    "http://localhost:8080/auth/login",
-    {
-      email,
-      password
-    }
-  )
+ axios.post(
+  `${API_URL}/auth/login`,
+  {
+    email,
+    password
+  }
+)
   .then((res) => {
 
     localStorage.setItem(

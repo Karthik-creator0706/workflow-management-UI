@@ -6,10 +6,10 @@ function RequestList() {
 
   const [requests, setRequests] = useState([]);
   const role = localStorage.getItem("role");
+  const API_URL = "https://workflow-management-system-o317.onrender.com";
 
   const loadRequests = () => {
-    axios
-      .get("http://localhost:8080/requests")
+    axios.get(`${API_URL}/requests`)
       .then((res) => {
         setRequests(res.data);
       })
@@ -19,8 +19,7 @@ function RequestList() {
   };
 
   const approveRequest = (id) => {
-    axios
-      .put(`http://localhost:8080/requests/${id}/approve`)
+    axios.put(`${API_URL}/requests/${id}/approve`)
       .then(() => {
         loadRequests();
       })
@@ -30,8 +29,7 @@ function RequestList() {
   };
 
   const rejectRequest = (id) => {
-    axios
-      .put(`http://localhost:8080/requests/${id}/reject`)
+    axios.put(`${API_URL}/requests/${id}/reject`)
       .then(() => {
         loadRequests();
       })
@@ -41,24 +39,21 @@ function RequestList() {
   };
 
   const clarifyRequest = (id) => {
-    axios
-      .put(`http://localhost:8080/requests/${id}/clarify`)
+    axios.put(`${API_URL}/requests/${id}/clarify`)
       .then(() => {
         loadRequests();
       });
   };
 
   const closeRequest = (id) => {
-    axios
-      .put(`http://localhost:8080/requests/${id}/close`)
+    axios.put(`${API_URL}/requests/${id}/close`)
       .then(() => {
         loadRequests();
       });
   };
 
   const reopenRequest = (id) => {
-    axios
-      .put(`http://localhost:8080/requests/${id}/reopen`)
+    axios.put(`${API_URL}/requests/${id}/reopen`)
       .then(() => {
         loadRequests();
       });
