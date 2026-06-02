@@ -29,9 +29,16 @@ const API_URL = "https://workflow-management-system-o317.onrender.com";
   // window.location.reload();
 
 })
+// .catch((err) => {
+//   console.log(err);
+//   alert("Invalid Email or Password");
+// });
 .catch((err) => {
-  console.log(err);
-  alert("Invalid Email or Password");
+  console.log("Error:", err);
+  console.log("Status:", err.response?.status);
+  console.log("Data:", err.response?.data);
+
+  alert("Login Failed");
 });
 };
 
