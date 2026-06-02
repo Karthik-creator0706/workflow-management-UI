@@ -1,7 +1,16 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
 .cards {
   display: flex;
   gap: 35px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
@@ -9,8 +18,13 @@
   padding: 20px;
   width: 220px;
   border-radius: 10px;
-  box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h3 {
@@ -18,13 +32,9 @@
 }
 
 .card h2 {
+  font-size: 40px;
+  margin-top: 15px;
   color: #1976d2;
-}
-
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .card:nth-child(1) {
@@ -43,16 +53,30 @@
   border-top: 5px solid #ff9800;
 }
 
-.card {
-  transition: 0.3s;
+/* Tablet */
+@media (max-width: 768px) {
+  .cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 45%;
+  }
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+/* Mobile */
+@media (max-width: 480px) {
+  .cards {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
 
-.card h2 {
-  font-size: 40px;
-  margin-top: 15px;
-  color: #1976d2;
+  .card {
+    width: 90%;
+  }
+
+  .card h2 {
+    font-size: 32px;
+  }
 }

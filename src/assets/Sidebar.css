@@ -29,3 +29,41 @@
 .sidebar button:hover {
   background: #e3f2fd;
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 180px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+  }
+
+  .sidebar button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .sidebar h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .sidebar button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+  }
+}

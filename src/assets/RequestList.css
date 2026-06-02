@@ -1,34 +1,22 @@
-.status {
-  padding: 6px 12px;
-  border-radius: 20px;
-  color: white;
-  font-weight: bold;
+.request-container {
+  width: 95%;
+  margin: 40px auto;
+  overflow-x: auto;
 }
 
-.APPROVED {
-  background: green;
+.request-container h1 {
+  text-align: center;
+  margin-top: 60px;
+  padding-bottom: 10px;
 }
 
-.REJECTED {
-  background: red;
-}
-
-.SUBMITTED {
-  background: orange;
-}
-
-.CLOSED {
-  background: blue;
-}
-
-.NEEDS_CLARIFICATION {
-  background: purple;
-}
-
+/* Table */
 table {
   width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
   background: white;
+  margin: auto;
 }
 
 th {
@@ -42,6 +30,7 @@ td {
   text-align: center;
 }
 
+/* Status */
 .status {
   padding: 6px 12px;
   border-radius: 20px;
@@ -73,6 +62,7 @@ td {
   background: purple;
 }
 
+/* Buttons */
 button {
   margin: 3px;
   padding: 6px 12px;
@@ -106,18 +96,41 @@ button:hover {
   opacity: 0.85;
 }
 
-.request-container {
-  width: 90%;
-  margin: 40px auto;
+/* Tablet */
+@media (max-width: 768px) {
+  .request-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  button {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
 }
 
-.request-container h1 {
-  text-align: center;
-  margin-top: 60px;
-  padding-bottom: 10px;
-}
+/* Mobile */
+@media (max-width: 480px) {
+  th,
+  td {
+    font-size: 12px;
+    padding: 6px;
+  }
 
-table {
-  width: 100%;
-  margin: auto;
+  .status {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  button {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
 }

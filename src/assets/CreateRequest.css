@@ -2,14 +2,21 @@
   display: flex;
   justify-content: center;
   margin-top: 150px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .create-card {
-   width: 500px;
+  width: 500px;
   background: white;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.create-card:hover {
+  transform: translateY(-3px);
 }
 
 .create-card h1 {
@@ -21,11 +28,17 @@
 .create-card input,
 .create-card textarea,
 .create-card select {
-  width: 95%;
+  width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
   border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.create-card textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 .create-card button {
@@ -42,17 +55,45 @@
   background: #1565c0;
 }
 
-.create-card {
-  transition: 0.3s;
-}
-
-.create-card:hover {
-  transform: translateY(-3px);
-}
-
 .success-msg {
   color: green;
   text-align: center;
   font-weight: bold;
   margin-bottom: 10px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .create-container {
+    margin-top: 100px;
+  }
+
+  .create-card {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .create-container {
+    margin-top: 80px;
+    padding: 10px;
+  }
+
+  .create-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .create-card h1 {
+    font-size: 22px;
+  }
+
+  .create-card input,
+  .create-card textarea,
+  .create-card select,
+  .create-card button {
+    font-size: 14px;
+  }
 }

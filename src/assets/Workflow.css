@@ -1,32 +1,21 @@
 .logs-container {
-  width: 90%;
+  width: 95%;
   margin: 40px auto;
   margin-top: 60px;
- 
+  overflow-x: auto;
 }
 
 .logs-container h1 {
   text-align: center;
-   padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
+/* Table */
 .logs-container table {
   width: 100%;
-  margin: auto;
-}
-
-.logs-container {
-  width: 90%;
-  margin: 40px auto;
-}
-
-.logs-container h1 {
-  text-align: center;
-}
-
-.logs-container table {
-  width: 100%;
+  min-width: 800px;
   border-collapse: collapse;
+  background: white;
 }
 
 .logs-container th {
@@ -40,6 +29,7 @@
   text-align: center;
 }
 
+/* Status Badges */
 .status {
   padding: 6px 12px;
   border-radius: 20px;
@@ -69,4 +59,41 @@
 
 .NEEDS_CLARIFICATION {
   background: purple;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .logs-container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .logs-container th,
+  .logs-container td {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .status {
+    font-size: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logs-container h1 {
+    font-size: 22px;
+  }
+
+  .logs-container th,
+  .logs-container td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .status {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
 }
