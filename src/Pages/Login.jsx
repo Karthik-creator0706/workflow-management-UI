@@ -10,6 +10,7 @@ const [password, setPassword] = useState("");
 const API_URL = "https://workflow-management-system-o317.onrender.com";
 
   const handleLogin = () => {
+    console.log("Login clicked");
 
  axios.post(
   `${API_URL}/auth/login`,
@@ -20,22 +21,18 @@ const API_URL = "https://workflow-management-system-o317.onrender.com";
 )
   .then((res) => {
 
-    localStorage.setItem(
-      "token",
-      res.data.token
-    );
+  localStorage.setItem("token", res.data.token);
+  localStorage.setItem("role", res.data.role);
 
-    localStorage.setItem(
-      "role",
-      res.data.role
-    );
+  alert("Login Success");
 
-    window.location.reload();
+  // window.location.reload();
 
-  })
-  .catch(() => {
-    alert("Invalid Email or Password");
-  });
+})
+.catch((err) => {
+  console.log(err);
+  alert("Invalid Email or Password");
+});
 };
 
   return (
