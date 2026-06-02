@@ -5,21 +5,20 @@ import RequestList from "./Pages/RequestList";
 import WorkflowLogs from "./Pages/Workflow";
 import Sidebar from "./Pages/Sidebar";
 
-import "../src/App.css"
+import "./App.css";
 
 function App() {
 
   const role = localStorage.getItem("role");
 
-  console.log(role);
-
   return (
     <>
       {role && (
         <button
-        className="logout-btn"
+          className="logout-btn"
           onClick={() => {
             localStorage.removeItem("role");
+            localStorage.removeItem("token");
             window.location.reload();
           }}
         >
@@ -33,16 +32,16 @@ function App() {
 
       {role === "MANAGER" && <RequestList />}
 
-     {role === "ADMIN" && (
-  <>
-    <Sidebar />
+      {role === "ADMIN" && (
+        <>
+          <Sidebar />
 
-    <div style={{ marginLeft: "240px" }}>
-      <Dashboard />
-      <RequestList />
-      <WorkflowLogs />
-    </div>
-  </>
+          <div className="main-content">
+            <Dashboard />
+            <RequestList />
+            <WorkflowLogs />
+          </div>
+        </>
       )}
     </>
   );
