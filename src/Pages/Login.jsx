@@ -4,43 +4,55 @@ import axios from "axios";
 
 function Login() {
 
-
   const [email, setEmail] = useState("");
-const [password, setPassword] = useState("");
-const API_URL = "https://workflow-management-system-o317.onrender.com";
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const API_URL = "https://workflow-management-system-o317.onrender.com";
 
   const handleLogin = () => {
+
     console.log("Login clicked");
 
- axios.post(
-  `${API_URL}/auth/login`,
-  {
-    email,
-    password
-  }
-)
-  .then((res) => {
+    setLoading(true);
 
-  localStorage.setItem("token", res.data.token);
-  localStorage.setItem("role", res.data.role);
+    axios.post(
+      `${API_URL}/auth/login`,
+      {
+        email,
+        password
+      }
+    )
+    .then((res) => {
 
-  alert("Login Success");
+      localStorage.setItem(
+        "token",
+        res.data.token
+      );
 
-  // window.location.reload();
+      localStorage.setItem(
+        "role",
+        res.data.role
+      );
 
-})
-// .catch((err) => {
-//   console.log(err);
-//   alert("Invalid Email or Password");
-// });
-.catch((err) => {
-  console.log("Error:", err);
-  console.log("Status:", err.response?.status);
-  console.log("Data:", err.response?.data);
+      alert("Login Success");
 
-  alert("Login Failed");
-});
-};
+      window.location.reload();
+
+    })
+    .catch((err) => {
+
+      console.log("Login Error:", err);
+      console.log("Status:", err.response?.status);
+      console.log("Data:", err.response?.data);
+
+      alert("Invalid Email or Password");
+
+    })
+    .finally(() => {
+      setLoading(false);
+    });
+  };
 
   return (
     <div className="login-container">
@@ -50,30 +62,24 @@ const API_URL = "https://workflow-management-system-o317.onrender.com";
         <h1>Workflow Login</h1>
 
         <input
-  type="email"
-  placeholder="Enter Email"
-  value={email}
-  onChange={(e) => setEmail(e.target.value)}
-/>
+          type="email"
+          placeholder="Enter Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-<input
-  type="password"
-  placeholder="Enter Password"
-  value={password}
-  onChange={(e) => setPassword(e.target.value)}
-/>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-        {/* <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
+        <button
+          onClick={handleLogin}
+          disabled={loading}
         >
-          <option value="USER">USER</option>
-          <option value="MANAGER">MANAGER</option>
-          <option value="ADMIN">ADMIN</option>
-        </select> */}
-
-        <button onClick={handleLogin}>
-          Login
+          {loading ? "Logging in..." : "Login"}
         </button>
 
       </div>
